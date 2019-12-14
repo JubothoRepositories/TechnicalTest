@@ -26,7 +26,7 @@ namespace BookstoreAppLib.DomainModelLayer.Store
             Discount = discount;
 
             var validator = new CategoryValidator();
-            validator.Validate(this);
+            validator.ValidateAndThrow(this);
         }
 
         public class CategoryValidator : AbstractValidator<Category>

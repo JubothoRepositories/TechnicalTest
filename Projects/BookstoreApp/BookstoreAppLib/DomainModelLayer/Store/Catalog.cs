@@ -37,7 +37,7 @@ namespace BookstoreAppLib.DomainModelLayer.Store
             Quantity = quantity;
 
             var validator = new CatalogValidator();
-            validator.Validate(this);
+            validator.ValidateAndThrow(this);
         }
 
         public class CatalogValidator : AbstractValidator<Catalog>
@@ -47,7 +47,7 @@ namespace BookstoreAppLib.DomainModelLayer.Store
                 RuleFor(catalog => catalog.Category).NotNull();
                 RuleFor(catalog => catalog.Name).NotNull().NotEmpty();
                 RuleFor(catalog => catalog.Price).GreaterThan(0m);
-                RuleFor(catalog => catalog.Quantity).GreaterThan(0);
+                RuleFor(catalog => catalog.Quantity).GreaterThanOrEqualTo(0);
             }
         }
 

@@ -48,7 +48,7 @@ namespace BookstoreAppLib.InfrastructureLayer.Repositories
                 basket.Add(GetCatalogByName(bookName));
             }
 
-            return (double)_basketCalculator.CalculateCatalogPriceAsync((IReadOnlyCollection<Catalog>)basket);
+            return (double)_basketCalculator.CalculateCatalogPrice((IReadOnlyCollection<Catalog>)basket);
         }
 
 

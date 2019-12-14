@@ -11,6 +11,6 @@ namespace BookstoreAppLib.ApplicationLayer.Store
     /// </summary>
     public interface IBasketCalculator
     {
-        decimal CalculateCatalogPriceAsync(IReadOnlyCollection<Catalog> catalogs);
+        decimal CalculateCatalogPrice(IReadOnlyCollection<Catalog> catalogs);
     }
 }

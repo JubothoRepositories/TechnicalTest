@@ -20,10 +20,10 @@ namespace BookstoreAppLib.InfrastructureLayer.BasketCalculators
         /// </summary>
         /// <param name="catalogs">Desired books</param>
         /// <returns></returns>
-        public decimal CalculateCatalogPriceAsync(IReadOnlyCollection<Catalog> catalogs)
+        public decimal CalculateCatalogPrice(IReadOnlyCollection<Catalog> catalogs)
         {
-            if (catalogs.Count == 0)
-                throw new ArgumentOutOfRangeException(nameof(catalogs), catalogs.Count, "Invalid catalogs count");
+            if ( (catalogs?.Count ?? 0) == 0)
+                throw new ArgumentOutOfRangeException(nameof(catalogs), catalogs?.Count, "Invalid catalogs count");
 
             //The .ToList() is required in order to access the .ForEach
 

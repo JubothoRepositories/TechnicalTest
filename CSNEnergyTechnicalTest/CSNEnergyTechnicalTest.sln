@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BookstoreAppLibrary", "Book
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookstoreAppLib", "..\Projects\BookstoreApp\BookstoreAppLib\BookstoreAppLib.csproj", "{43710185-FF8A-448B-ACF6-6D6959CA9BDF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookstoreAppLib.Tests", "..\Projects\BookstoreApp\BookstoreAppLib.Tests\BookstoreAppLib.Tests.csproj", "{C2742054-42AA-4454-9D24-22116A424754}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,12 +31,17 @@ Global
 		{43710185-FF8A-448B-ACF6-6D6959CA9BDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43710185-FF8A-448B-ACF6-6D6959CA9BDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43710185-FF8A-448B-ACF6-6D6959CA9BDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2742054-42AA-4454-9D24-22116A424754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2742054-42AA-4454-9D24-22116A424754}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2742054-42AA-4454-9D24-22116A424754}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2742054-42AA-4454-9D24-22116A424754}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{43710185-FF8A-448B-ACF6-6D6959CA9BDF} = {76130FEA-51E5-457C-A487-A3E3B78872BF}
+		{C2742054-42AA-4454-9D24-22116A424754} = {76130FEA-51E5-457C-A487-A3E3B78872BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {75CA0429-92E8-4EA1-A129-65ECE27A38E8}
