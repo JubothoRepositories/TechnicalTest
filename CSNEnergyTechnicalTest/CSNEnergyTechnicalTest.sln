@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29324.140
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{250D7993-DFFD-4C6C-BC40-EE37C333E085}"
+	ProjectSection(SolutionItems) = preProject
+		..\Documentation\CSN Energy_technical test_EN.docx = ..\Documentation\CSN Energy_technical test_EN.docx
+		..\Documentation\ReadMe.txt = ..\Documentation\ReadMe.txt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookstoreAppConsoleTest", "..\Projects\BookstoreAppConsoleTest\BookstoreAppConsoleTest.csproj", "{C647A3C0-6437-4035-A4AB-0611A1CA102C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BookstoreAppLibrary", "BookstoreAppLibrary", "{76130FEA-51E5-457C-A487-A3E3B78872BF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookstoreAppLib", "..\Projects\BookstoreApp\BookstoreAppLib\BookstoreAppLib.csproj", "{43710185-FF8A-448B-ACF6-6D6959CA9BDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C647A3C0-6437-4035-A4AB-0611A1CA102C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C647A3C0-6437-4035-A4AB-0611A1CA102C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C647A3C0-6437-4035-A4AB-0611A1CA102C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C647A3C0-6437-4035-A4AB-0611A1CA102C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43710185-FF8A-448B-ACF6-6D6959CA9BDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43710185-FF8A-448B-ACF6-6D6959CA9BDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43710185-FF8A-448B-ACF6-6D6959CA9BDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43710185-FF8A-448B-ACF6-6D6959CA9BDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{43710185-FF8A-448B-ACF6-6D6959CA9BDF} = {76130FEA-51E5-457C-A487-A3E3B78872BF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75CA0429-92E8-4EA1-A129-65ECE27A38E8}
+	EndGlobalSection
+EndGlobal
