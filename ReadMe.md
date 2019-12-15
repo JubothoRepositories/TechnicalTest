@@ -4,7 +4,7 @@ This is Svetoslav Mitov and those are my implementation notes.
 I will start with some pictures, and then the dev notes.
 
 Unit test coverage is 100%
-![unit test coverage](https://github.com/JubothoRepositories/TechnicalTest/blob/nunit/Screenshots/UnitTestCoverage.png)
+![unit test coverage](Screenshots/UnitTestCoverage.png)
 
 I am using
  - Visual Studio 2019. For c# I prefer it over Visual Studio code 
