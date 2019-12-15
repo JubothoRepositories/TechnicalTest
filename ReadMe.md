@@ -6,11 +6,13 @@ I will start with some pictures, and then the dev notes.
 ## Used technologies, frameworks, etc
 I am using
  - Visual Studio 2019. For c# I prefer it over Visual Studio code 
- - .net core 3.0 for all projects. (the most important featgure of 3.1 is it's 3 years supprt, 3.0 reach end-of-life on 03.03.2020, but this is not an issue for this project)
+ - .net core 3.0 for all projects. (yeah, I know 3.1 is here, but the most important feature of 3.1 is it's 3 years supprt, 3.0 reach end-of-life on 03.03.2020 and this is okay)
  - NUnit for unit-testing framework, because it's one of the oldest one but still in active development, they are supporting .net core in visual studio and is very widely known and unit-testing framework
- - Moq for mocking library because it's really so great library
+ - Moq for mocking library because it really rocks
  - JetBrains dotCover for coverage of the tests. With 30 tests it's 100%. Some of them are not required for that coverage, but the coverage is not the only metric which should be observed in order to have useful tests
  - Integration tests, despite the fact we already have 100% from the unit tests. Integration tests are pretty important, because they help exposing the faults in the interaction between the units
+ - Newtonsoft json.net. (yeah, I know about the 'new' kid - System.Text.Json, faster, less memory, etc, but does not support schemas yet)
+ - Newtonsoft schema. Not free, 1000 validations per hour, there are some free libraries, but combines good with their json livrary
  
  - the new switch expression, again from c# 8, no need to - but it's really cool
  - strict validation rules (with fluent validation), I try to never allow on object to exist in an invalid state, which saves tons of worries and further validations after creations
@@ -37,7 +39,8 @@ I am not using
 ![unit test coverage](Screenshots/UnitTestCoverage.png)
 
 
-
+ ## Random notes written in the course of implementation
+ 
 First, I start by creating a blank solution. This is possible since VS 2017, in the earlier versions an additional template was required in order to create Blank Solution, which is so useful.
 Then this ReadMe.txt is created in which I am putting all (politically correct) thoughts.
 
