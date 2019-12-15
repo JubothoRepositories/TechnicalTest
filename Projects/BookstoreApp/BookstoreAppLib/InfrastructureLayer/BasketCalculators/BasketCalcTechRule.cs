@@ -13,7 +13,7 @@ namespace BookstoreAppLib.InfrastructureLayer.BasketCalculators
     /// <summary>
     /// Calculates the price of a basket
     /// </summary>
-    public class BasketCalcTechRule : IBasketCalculator
+    public sealed class BasketCalcTechRule : IBasketCalculator
     {
         /// <summary>
         /// Calculates the price of a basket

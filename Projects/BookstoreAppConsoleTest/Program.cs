@@ -9,18 +9,18 @@ namespace BookstoreAppConsoleTest
 {
     class Program
     {
-        private const string SchemaLocation = @".\Artefacts\schema-store.json";
+        private const string SchemaLocation = @".\BookstoreDb\schema-store.json";
+        private const string JsonLocation = @".\BookstoreDb\content-store.json";
 
         static void Main(string[] args)
         {
             string jsonSchema = File.ReadAllText(SchemaLocation);
-
             ServiceCollection services = ConfigureServices(jsonSchema);
 
             var serviceProvider = services.BuildServiceProvider();
             var store = serviceProvider.GetService<IStore>();
 
-            store.Import(File.ReadAllText(@".\Artefacts\content-store.json"));
+            store.Import(File.ReadAllText(JsonLocation));
 
             store.Quantity("Isaac Asimov - Foundation");
 

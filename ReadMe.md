@@ -18,14 +18,14 @@ I am using
  - strict validation rules (with fluent validation), I try to never allow on object to exist in an invalid state, which saves tons of worries and further validations after creations
  - read-only domain objects, which again - saves tons of worries and further validations after creations
 
- - the repository pattern, which allows me to separates the data access logic and the business logic.
  - Microsoft.Extensions.DependencyInjection for Dependency Injection
  - some elements of the DDD Rich Domain Model, which means I will have cross refferences between the aggregate root and the objects belonging to the same aggregate
  - sealed for class when I don't think someone would like to inherit it. I beleave that the defautl should be sealed and 'unseal' or something should exist to explicitly mark when you want a class to be inheritable
 
+
  
- 
-I am not using
+ I am not using
+ - the classical repository pattern, which allows me to separates the data access logic and the business logic. In this app, the IStore interface is used as both repository and service, but I am not making distinct repository interface and implementation because of simplicity, but a real implementation would be better if the service and repository are two different concepts
  - async/await because the contract in the assignment is synchronous
  - logging, but I could add it very easy with DI again - nlog or serilog, but not log4net, it's so not elegant
  - more than one implementation of service/repository. but I could add more implementations very easy, for example ef core in memory (https://docs.microsoft.com/en-us/ef/core/miscellaneous/testing/in-memory)

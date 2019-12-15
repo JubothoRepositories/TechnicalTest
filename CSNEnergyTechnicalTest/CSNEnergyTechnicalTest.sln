@@ -6,7 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{250D7993-DFFD-4C6C-BC40-EE37C333E085}"
 	ProjectSection(SolutionItems) = preProject
 		..\Documentation\CSN Energy_technical test_EN.docx = ..\Documentation\CSN Energy_technical test_EN.docx
-		..\ReadMe.txt = ..\ReadMe.txt
+		..\ReadMe.md = ..\ReadMe.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookstoreAppConsoleTest", "..\Projects\BookstoreAppConsoleTest\BookstoreAppConsoleTest.csproj", "{C647A3C0-6437-4035-A4AB-0611A1CA102C}"
