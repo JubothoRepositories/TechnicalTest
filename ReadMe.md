@@ -3,9 +3,6 @@ Hello,
 This is Svetoslav Mitov and those are my implementation notes.
 I will start with some pictures, and then the dev notes.
 
-Unit test coverage is 100%
-![unit test coverage](Screenshots/UnitTestCoverage.png)
-
 I am using
  - Visual Studio 2019. For c# I prefer it over Visual Studio code 
  - the new switch expression, again from c# 8, no need to - but it's really cool
@@ -28,7 +25,13 @@ I am not using
  - logging, but I could add it very easy with DI again - nlog or serilog, but not log4net, it's so not elegant
  - more than one implementation of service/repository. but I could add more implementations very easy, for example ef core in memory (https://docs.microsoft.com/en-us/ef/core/miscellaneous/testing/in-memory)
  - xUnit because it's visual studio integration is still lagging, but xUnit is expected to be the "future"
-
+ 
+ 
+ ## Unit tests 
+ 
+ ### coverage is 100%
+ 
+![unit test coverage](Screenshots/UnitTestCoverage.png)
 
 
 
@@ -53,7 +56,7 @@ Note! It's a good practice for the methods to have verb or verb phrase in it's n
 
 Note! I am adding and using the "Recommended Tags for Documentation Comments" for all public methods, classes and properties. This helps in generating documentation and while coding as well.
 
-=== Structure 
+## Structure 
 There is the Domain Layer, which will contain all Domain logic.
 I will use Rich Domain Model, which means almost all of the business logic will be there.
 The rest will be in the Services (one - Store), which is in the Application Layer.
