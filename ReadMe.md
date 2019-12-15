@@ -41,7 +41,7 @@ I am using
  - Each component tested in the unit tests is tested in total isolation of the other components, and this is the prime goal of the unit test as methodology
  - To achive isolation a mocking framework (Moq) is used. As discussed, Moq rulez.
  - The integration tests are the examples from the assignment. They show the integration and communication between all (two) components in the application - the store and the basket calculator service
- - Invalid states of the entities (Catalog and Category) are tested as well. For example you should not be able to have 100% discount, or -1% discount, or quantity of -1, and so on
+ - Invalid states of the entities (Catalog and Category) are tested as well. For example you should not be able to have 100% discount, or -1% discount, or quantity of -1, and so on   (**Warning!** Old joke ahead! - A QA engineer walks into a bar. Orders a beer. Orders 0 beers. Orders 99999999999 beers. Orders a lizard. Orders -1 beers. Orders a ueicbksjdhd. )
 
 
  ## Random notes written in the course of implementation
