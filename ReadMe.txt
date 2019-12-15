@@ -1,10 +1,13 @@
 Hello,
 
 This is Svetoslav Mitov and those are my implementation notes.
+I will start with some pictures, and then the dev notes.
+
+Unit test coverage is 100%
+![unit test coverage](screenshots/UnitTestCoverage.png)
 
 I am using
- - Visual Studio 2019. For c# I prefer it over Visual Studio code
- - c# 8 "Nullable and not-nullable reference types"  https://docs.microsoft.com/en-us/dotnet/csharp/nullable-references
+ - Visual Studio 2019. For c# I prefer it over Visual Studio code 
  - the new switch expression, again from c# 8, no need to - but it's really cool
  - strict validation rules (with fluent validation), I try to never allow on object to exist in an invalid state, which saves tons of worries and further validations after creations
  - read-only domain objects, which again - saves tons of worries and further validations after creations
@@ -14,10 +17,18 @@ I am using
  - some elements of the DDD Rich Domain Model, which means I will have cross refferences between the aggregate root and the objects belonging to the same aggregate
  - sealed for class when I don't think someone would like to inherit it. I beleave that the defautl should be sealed and 'unseal' or something should exist to explicitly mark when you want a class to be inheritable
 
+ - NUnit for unit-testing framework, because it's one of the oldest one but still in active development, they are supporting .net core in visual studio and is very widely known and unit-testing framework
+ - Moq for mocking library because it's really so great library
+ - JetBrains dotCover for coverage of the tests. With 30 tests it's 100%. Some of them are not required for that coverage, but the coverage is not the only metric which should be observed in order to have useful tests
+ - Integration tests, despite the fact we already have 100% from the unit tests. Integration tests are pretty important, because they help exposing the faults in the interaction between the units
+
+
 I am not using
  - async/await because the contract in the assignment is synchronous
  - logging, but I could add it very easy with DI again - nlog or serilog, but not log4net, it's so not elegant
  - more than one implementation of service/repository. but I could add more implementations very easy, for example ef core in memory (https://docs.microsoft.com/en-us/ef/core/miscellaneous/testing/in-memory)
+ - xUnit because it's visual studio integration is still lagging, but xUnit is expected to be the "future"
+
 
 
 
@@ -49,6 +60,7 @@ The rest will be in the Services (one - Store), which is in the Application Laye
 
 Note! I am huge fan of readonly and Immutable structs, which means that all members are read-only.
 This helps a lot in protecting the values  from unintended modifications outside of my control AND does not require re-validate everything again on each mutation.
+
 Note! I am using fluent validations in the constructor of the domain objects. This let me never ever end up a model in an invalid state.
 
 IReadOnlyCollection and IReadOnlyList are faster than IEnumerable, where the access is continuous (you get only enumerator) and you don't have random element access, which is slow in terms of counting and searching.
