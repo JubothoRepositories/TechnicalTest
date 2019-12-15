@@ -38,6 +38,12 @@ I am using
 ![unit test coverage](Screenshots/UnitTestCoverage.png)
 
 
+ - Each component tested in the unit tests is tested in total isolation of the other components, and this is the prime goal of the unit test as methodology
+ - To achive isolation a mocking framework (Moq) is used. As discussed, Moq rulez.
+ - The integration tests are the examples from the assignment. They show the integration and communication between all (two) components in the application - the store and the basket calculator service
+ - Invalid states of the entities (Catalog and Category) are tested as well. For example you should not be able to have 100% discount, or -1% discount, or quantity of -1, and so on
+
+
  ## Random notes written in the course of implementation
  
 First, I start by creating a blank solution. This is possible since VS 2017, in the earlier versions an additional template was required in order to create Blank Solution, which is so useful.
