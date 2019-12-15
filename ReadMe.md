@@ -1,6 +1,6 @@
 Hello,
 
-This is Svetoslav Mitov and those are my implementation notes.
+This is Svetoslav Mitov and here are my implementation notes.
 I will start with some pictures, and then the dev notes.
 
 ## Used technologies, frameworks, etc
