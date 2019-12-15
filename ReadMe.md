@@ -3,8 +3,15 @@ Hello,
 This is Svetoslav Mitov and those are my implementation notes.
 I will start with some pictures, and then the dev notes.
 
+## Used technologies, frameworks, etc
 I am using
  - Visual Studio 2019. For c# I prefer it over Visual Studio code 
+ - .net core 3.0 for all projects. (the most important featgure of 3.1 is it's 3 years supprt, 3.0 reach end-of-life on 03.03.2020, but this is not an issue for this project)
+ - NUnit for unit-testing framework, because it's one of the oldest one but still in active development, they are supporting .net core in visual studio and is very widely known and unit-testing framework
+ - Moq for mocking library because it's really so great library
+ - JetBrains dotCover for coverage of the tests. With 30 tests it's 100%. Some of them are not required for that coverage, but the coverage is not the only metric which should be observed in order to have useful tests
+ - Integration tests, despite the fact we already have 100% from the unit tests. Integration tests are pretty important, because they help exposing the faults in the interaction between the units
+ 
  - the new switch expression, again from c# 8, no need to - but it's really cool
  - strict validation rules (with fluent validation), I try to never allow on object to exist in an invalid state, which saves tons of worries and further validations after creations
  - read-only domain objects, which again - saves tons of worries and further validations after creations
@@ -14,12 +21,8 @@ I am using
  - some elements of the DDD Rich Domain Model, which means I will have cross refferences between the aggregate root and the objects belonging to the same aggregate
  - sealed for class when I don't think someone would like to inherit it. I beleave that the defautl should be sealed and 'unseal' or something should exist to explicitly mark when you want a class to be inheritable
 
- - NUnit for unit-testing framework, because it's one of the oldest one but still in active development, they are supporting .net core in visual studio and is very widely known and unit-testing framework
- - Moq for mocking library because it's really so great library
- - JetBrains dotCover for coverage of the tests. With 30 tests it's 100%. Some of them are not required for that coverage, but the coverage is not the only metric which should be observed in order to have useful tests
- - Integration tests, despite the fact we already have 100% from the unit tests. Integration tests are pretty important, because they help exposing the faults in the interaction between the units
-
-
+ 
+ 
 I am not using
  - async/await because the contract in the assignment is synchronous
  - logging, but I could add it very easy with DI again - nlog or serilog, but not log4net, it's so not elegant
