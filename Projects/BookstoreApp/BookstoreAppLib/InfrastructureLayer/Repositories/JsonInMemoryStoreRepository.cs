@@ -15,9 +15,11 @@ namespace BookstoreAppLib.InfrastructureLayer.Repositories
         private readonly IBasketCalculator _basketCalculator;
         private JSchema schema;
 
+        //our in memory repository
         private IList<Category> _categories = new List<Category>();
         private IList<Catalog> _catalogs = new List<Catalog>();
 
+        //our primary key checker, using hashset is a lot faster than just checking is that name already in the list
         private HashSet<string> _categoryNames = new HashSet<string>();
         private HashSet<string> _catalogNames = new HashSet<string>();
 
@@ -48,7 +50,7 @@ namespace BookstoreAppLib.InfrastructureLayer.Repositories
                 basket.Add(GetCatalogByName(bookName));
             }
 
-            return (double)_basketCalculator.CalculateCatalogPriceAsync((IReadOnlyCollection<Catalog>)basket);
+            return (double)_basketCalculator.CalculateCatalogPrice((IReadOnlyCollection<Catalog>)basket);
         }
 
 
@@ -64,10 +66,10 @@ namespace BookstoreAppLib.InfrastructureLayer.Repositories
             }
 
             JObject bookStoreJsonContent = JObject.Parse(catalogAsJson);
-
+            
             if (!bookStoreJsonContent.IsValid(schema, out IList<string> errors))
             {
-                throw new Exception($"Errors while importing json store: {string.Join(',', errors)}");
+                throw new ArgumentException($"Bad json format, errors: {string.Join(',', errors)}");
             }
 
             //please note that the discount is guaranteed to be decimal because of the json schema validator
@@ -84,9 +86,10 @@ namespace BookstoreAppLib.InfrastructureLayer.Repositories
                     string name = f["Name"].Value<string>();
                     if (_categoryNames.Contains(name))
                     {
-                        throw new Exception($"A category with name '{name}' already exists!");
+                        throw new ArgumentException($"A category with name '{name}' already exists!");
                     }
 
+                    _categoryNames.Add(name);
                     _categories.Add(new Category(
                         name,
                         f["Discount"].Value<decimal>()));
@@ -101,9 +104,10 @@ namespace BookstoreAppLib.InfrastructureLayer.Repositories
                     string name = f["Name"].Value<string>();
                     if (_catalogNames.Contains(name))
                     {
-                        throw new Exception($"A catalog with name '{name}' already exists!");
+                        throw new ArgumentException($"A catalog with name '{name}' already exists!");
                     }
 
+                    _catalogNames.Add(name);
                     _catalogs.Add(new Catalog(
                         name,
                         _categories.Single(s => s.Name.Equals(f["Category"].Value<string>())),
@@ -131,7 +135,7 @@ namespace BookstoreAppLib.InfrastructureLayer.Repositories
             Catalog catalog = _catalogs.SingleOrDefault(s => s.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
             if (catalog is null)
             {
-                throw new Exception($"Sorry, a book with name '{name}' does not exist in our store!");
+                throw new ArgumentException($"Sorry, a book with name '{name}' does not exist in our store!");
             }
 
             return catalog;
