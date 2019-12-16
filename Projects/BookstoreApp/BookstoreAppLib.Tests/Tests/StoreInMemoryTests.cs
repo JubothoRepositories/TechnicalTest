@@ -107,6 +107,7 @@ namespace BookstoreAppLib.Tests.Tests
         public void When_TryToBuyButStoreIsEmpty_Expect_Exception()
         {
             var store = new JsonInMemoryStoreRepository("{}", null);
+
             Assert.Throws<Exception>(() => store.Buy(null));
         }
 

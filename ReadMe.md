@@ -5,7 +5,7 @@ This is Svetoslav Mitov and here are my implementation notes.
 ## Used technologies, frameworks, etc
 I am using
  - Visual Studio 2019. For c# I prefer it over Visual Studio code 
- - .net core 3.0 for all projects. (yeah, I know 3.1 is here, but the most important feature of 3.1 is it's 3 years supprt, 3.0 reach end-of-life on 03.03.2020 and this is okay)
+ - .net core 3.0 for all projects. (yeah, I know 3.1 is here, but the most important feature of 3.1 is it's 3 years support, 3.0 reach end-of-life on 03.03.2020 and this is okay)
  - NUnit for unit-testing framework, because it's one of the oldest one but still in active development, they are supporting .net core in visual studio and is very widely known unit-testing framework
  - Moq for mocking library because it really rocks
  - JetBrains dotCover for coverage of the tests. With 30 tests it's 100%. Some of them are not required for that coverage, but the coverage is not the only metric which should be desired in order to have useful and meaningful tests
@@ -18,8 +18,8 @@ I am using
  - read-only domain objects, which again - saves tons of worries and further validations after creations
 
  - Microsoft.Extensions.DependencyInjection for Dependency Injection
- - some elements of the DDD Rich Domain Model, which means I will have cross refferences between the aggregate root and the objects belonging to the same aggregate (In the actual implementation the domain just don't have any logic, so it's an anemic one)
- - *sealed*  classes when I don't think someone would like to inherit it. I beleave that the defautl should be sealed and 'unseal' or something should exist to explicitly mark when you want a class to be inheritable
+ - some elements of the DDD Rich Domain Model, which means I will have cross references between the aggregate root and the objects belonging to the same aggregate (In the actual implementation the domain just don't have any logic, so it's an anemic one)
+ - *sealed*  classes when I don't think someone would like to inherit it. I believe that the default should be sealed and 'unseal' or something should exist to explicitly mark when you want a class to be inheritable
 
 
  
@@ -39,7 +39,7 @@ I am using
 
 
  - Each component tested in the unit tests is tested in total isolation of the other components, and this is the prime goal of the unit test as methodology
- - To achive isolation a mocking framework (Moq) is used. As discussed, Moq rulez.
+ - To achieve isolation a mocking framework (Moq) is used. As discussed, Moq rulez.
  - The integration tests are the examples from the assignment. They show the integration and communication between all (two) components in the application - the store and the basket calculator service
  - Invalid states of the entities (Catalog and Category) are tested as well. For example you should not be able to have 100% discount, or -1% discount, or quantity of -1, and so on   (**Warning!** Old joke ahead! - A QA engineer walks into a bar. Orders a beer. Orders 0 beers. Orders 99999999999 beers. Orders a lizard. Orders -1 beers. Orders a ueicbksjdhd. )
 
