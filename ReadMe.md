@@ -1,30 +1,29 @@
 Hello,
 
 This is Svetoslav Mitov and here are my implementation notes.
-I will start with some pictures, and then the dev notes.
 
 ## Used technologies, frameworks, etc
 I am using
  - Visual Studio 2019. For c# I prefer it over Visual Studio code 
  - .net core 3.0 for all projects. (yeah, I know 3.1 is here, but the most important feature of 3.1 is it's 3 years supprt, 3.0 reach end-of-life on 03.03.2020 and this is okay)
- - NUnit for unit-testing framework, because it's one of the oldest one but still in active development, they are supporting .net core in visual studio and is very widely known and unit-testing framework
+ - NUnit for unit-testing framework, because it's one of the oldest one but still in active development, they are supporting .net core in visual studio and is very widely known unit-testing framework
  - Moq for mocking library because it really rocks
- - JetBrains dotCover for coverage of the tests. With 30 tests it's 100%. Some of them are not required for that coverage, but the coverage is not the only metric which should be observed in order to have useful tests
- - Integration tests, despite the fact we already have 100% from the unit tests. Integration tests are pretty important, because they help exposing the faults in the interaction between the units
- - Newtonsoft json.net. (yeah, I know about the 'new' kid - System.Text.Json, faster, less memory, etc, but does not support schemas yet)
- - Newtonsoft schema. Not free, 1000 validations per hour, there are some free libraries, but combines good with their json livrary
+ - JetBrains dotCover for coverage of the tests. With 30 tests it's 100%. Some of them are not required for that coverage, but the coverage is not the only metric which should be desired in order to have useful and meaningful tests
+ - **integration tests**, despite the fact we already have 100% coverage from the unit tests. Integration tests are very important, because they help to expose hidden issues and problems in the interaction between the units
+ - Newtonsoft json.net (yeah, I know about the 'new' kid - System.Text.Json, faster, less memory, etc, but does not support schemas yet)
+ - Newtonsoft schema. Not free, 1000 validations per hour, there are some free libraries, but combines good with their json library
  
- - the new switch expression, again from c# 8, no need to - but it's really cool
- - strict validation rules (with fluent validation), I try to never allow on object to exist in an invalid state, which saves tons of worries and further validations after creations
+ - the new switch expression syntax, c# 8 new feature, it's really cool
+ - strict validation rules (with **fluent validation**), I try to never allow on object to exist in an invalid state, which saves tons of worries and further validations after creations
  - read-only domain objects, which again - saves tons of worries and further validations after creations
 
  - Microsoft.Extensions.DependencyInjection for Dependency Injection
- - some elements of the DDD Rich Domain Model, which means I will have cross refferences between the aggregate root and the objects belonging to the same aggregate
- - sealed for class when I don't think someone would like to inherit it. I beleave that the defautl should be sealed and 'unseal' or something should exist to explicitly mark when you want a class to be inheritable
+ - some elements of the DDD Rich Domain Model, which means I will have cross refferences between the aggregate root and the objects belonging to the same aggregate (In the actual implementation the domain just don't have any logic, so it's an anemic one)
+ - *sealed*  classes when I don't think someone would like to inherit it. I beleave that the defautl should be sealed and 'unseal' or something should exist to explicitly mark when you want a class to be inheritable
 
 
  
- I am not using
+ I am **not** using
  - the classical repository pattern, which allows me to separates the data access logic and the business logic. In this app, the IStore interface is used as both repository and service, but I am not making distinct repository interface and implementation because of simplicity, but a real implementation would be better if the service and repository are two different concepts
  - async/await because the contract in the assignment is synchronous
  - logging, but I could add it very easy with DI again - nlog or serilog, but not log4net, it's so not elegant
@@ -37,6 +36,12 @@ I am using
  ### coverage is 100%
  
 ![unit test coverage](Screenshots/UnitTestCoverage.png)
+
+
+ - Each component tested in the unit tests is tested in total isolation of the other components, and this is the prime goal of the unit test as methodology
+ - To achive isolation a mocking framework (Moq) is used. As discussed, Moq rulez.
+ - The integration tests are the examples from the assignment. They show the integration and communication between all (two) components in the application - the store and the basket calculator service
+ - Invalid states of the entities (Catalog and Category) are tested as well. For example you should not be able to have 100% discount, or -1% discount, or quantity of -1, and so on   (**Warning!** Old joke ahead! - A QA engineer walks into a bar. Orders a beer. Orders 0 beers. Orders 99999999999 beers. Orders a lizard. Orders -1 beers. Orders a ueicbksjdhd. )
 
 
  ## Random notes written in the course of implementation
